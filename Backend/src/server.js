@@ -22,12 +22,13 @@ const webAPI = express.Router();
 webAPI.get("/", getHomepage);
 //khai báo route
 app.use("/", webAPI);
+
 app.use("/v1/api/", apiRoutes);
 
 (async () => {
   try {
     //using mongoose
-    // await connection();
+    await connection();
 
     app.listen(port, () => {
       console.log(`Backend Nodejs App listening on port ${port}`);
