@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+import Header from "./components/layout/header";
 import axios from "./util/axios.customize";
 import { useEffect } from "react";
 
@@ -9,7 +11,12 @@ function App() {
     };
     fetchHelloWorld();
   }, []);
-  return <>hello world</>;
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
