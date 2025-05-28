@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Form, Input, notification } from "antd";
 import { createUserApi } from "../util/app";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +42,7 @@ const RegisterPage = () => {
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
-          <Input />
+          <Input.Password />
         </Form.Item>
         <Form.Item
           label="Name"
