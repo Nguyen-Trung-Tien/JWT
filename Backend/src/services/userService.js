@@ -1,7 +1,6 @@
 require("dotenv").config();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
-const { name } = require("ejs");
 const jwt = require("jsonwebtoken");
 const saltRounds = 10;
 

@@ -4,9 +4,11 @@ const {
   handleLogin,
   getUser,
 } = require("../controllers/userController");
+const delay = require("../middleware/delay");
 const routerAPI = express.Router();
 
-routerAPI.get("/", (req, res) => {
+routerAPI.all("*", delay);
+routerAPI.get("/", delay, (req, res) => {
   return res.status(200).json("hello word");
 });
 
