@@ -1,5 +1,6 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
+const { create } = require("../models/user");
 
 const auth = (req, res, next) => {
   const white_lists = ["/", "/register", "/login"];
@@ -12,6 +13,11 @@ const auth = (req, res, next) => {
 
       try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = {
+          email: decoded.email,
+          name: decoded.name,
+          createBy: decoded.name,
+        };
         console.log("Check_TOKEN>>>>", decoded);
       } catch (error) {
         res.status(401).json({
