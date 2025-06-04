@@ -15,7 +15,9 @@ export const AuthWrapper = (props) => {
       email: "",
       name: "",
     },
+    appLoading: true,
   });
+
   const [appLoading, setAppLoading] = useState(true);
   return (
     <AuthContext.Provider

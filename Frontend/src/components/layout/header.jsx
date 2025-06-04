@@ -1,5 +1,9 @@
 import { useContext, useState } from "react";
-import { MailOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  HomeOutlined,
+  SettingOutlined,
+  UserAddOutlined,
+} from "@ant-design/icons";
 import { Menu } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
@@ -13,14 +17,14 @@ const Header = () => {
     {
       label: <Link to="/">HomePage</Link>,
       key: "home",
-      icon: <MailOutlined />,
+      icon: <HomeOutlined />,
     },
     ...(auth.isAuthenticated
       ? [
           {
             label: <Link to="/user">User</Link>,
             key: "user",
-            icon: <MailOutlined />,
+            icon: <UserAddOutlined />,
           },
         ]
       : []),
