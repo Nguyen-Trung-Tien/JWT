@@ -47,7 +47,6 @@ const UserPage = () => {
         columns={columns}
         rowKey={"_id"}
       />
-      ;
     </div>
   );
 };
